@@ -33,7 +33,7 @@ import MainPage from './pages/MainPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <div>
       <Link to='/' data-testid='main-link'>
         main
       </Link>
@@ -44,7 +44,7 @@ function App() {
         <Route path='/' element={<MainPage />} />
         <Route path='/about' element={<AboutPage />} />
       </Routes>
-    </BrowserRouter>
+    </div>
   );
 }
 
