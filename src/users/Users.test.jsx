@@ -41,7 +41,7 @@ describe('USERS TEST', () => {
 
   test('test redirect to details page', async () => {
     axios.get.mockReturnValue(response);
-    render(renderWithRouter(<Users />));
+    renderWithRouter(<Users />);
     const users = await screen.findAllByTestId('user-item');
     userEvent.click(users[0]);
     expect(screen.getByTestId('user-page')).toBeInTheDocument();

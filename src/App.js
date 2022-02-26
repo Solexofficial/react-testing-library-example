@@ -1,5 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar';
 import AboutPage from './pages/AboutPage';
 import ErrorPage from './pages/ErrorPage';
 import MainPage from './pages/MainPage';
@@ -38,15 +39,7 @@ import Users from './users/Users';
 function App() {
   return (
     <div>
-      <Link to='/' data-testid='main-link'>
-        main
-      </Link>
-      <Link to='/about' data-testid='about-link'>
-        about
-      </Link>
-      <Link to='/users' data-testid='users-link'>
-        users
-      </Link>
+      <Navbar />
       <AppRouter />
     </div>
   );
