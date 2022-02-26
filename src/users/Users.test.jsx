@@ -25,7 +25,7 @@ describe('USERS TEST', () => {
     axios.get.mockReturnValue(response);
     render(<Users />);
     const users = await screen.findAllByTestId('user-item');
-    expect(users.length).toBe(3);
+    expect(users.length).toBe(2);
     expect(axios.get).toBeCalledTimes(1);
   });
 });
