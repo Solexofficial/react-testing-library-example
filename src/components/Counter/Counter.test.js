@@ -1,13 +1,15 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithRedux } from '../../tests/helpers/renderWithRedux';
-import Counter from './Counter';
+import { renderTestApp } from '../../tests/helpers/renderTestApp';
 
 describe('Counter test', () => {
-  test('Test router', async () => {
-    renderWithRedux(<Counter />, {
-      counter: {
-        value: 10,
+  test('Counter test increment', async () => {
+    renderTestApp(null, {
+      route: '/',
+      initialState: {
+        counter: {
+          value: 10,
+        },
       },
     });
     const incrementBtn = screen.getByTestId('increment-btn');
