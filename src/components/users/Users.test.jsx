@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import axios from 'axios';
 import { MemoryRouter } from 'react-router-dom';
-import { renderTestApp } from '../tests/helpers/renderTestApp';
+import { renderTestApp } from '../../tests/helpers/renderTestApp';
 import Users from './Users';
 
 jest.mock('axios');

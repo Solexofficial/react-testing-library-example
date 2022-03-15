@@ -1,12 +1,12 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import AboutPage from './pages/AboutPage';
 import ErrorPage from './pages/ErrorPage';
 import MainPage from './pages/MainPage';
 import UserDetailsPage from './pages/UserDetailsPage';
 import AppRouter from './router/AppRouter';
-import Users from './users/Users';
+import Users from './components/users/Users';
 
 // function App() {
 //   const [data, setData] = useState(null);

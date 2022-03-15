@@ -5,7 +5,8 @@ import ErrorPage from '../pages/ErrorPage';
 import HelloWorld from '../pages/HelloWorld';
 import MainPage from '../pages/MainPage';
 import UserDetailsPage from '../pages/UserDetailsPage';
-import Users from '../users/Users';
+import Users from '../components/users/Users';
+import UsersForTest from '../components/usersForTest/UsersForTest';
 
 function AppRouter() {
   return (
@@ -13,6 +14,7 @@ function AppRouter() {
       <Route path='/' element={<MainPage />} />
       <Route path='/about' element={<AboutPage />} />
       <Route path='/users' element={<Users />} />
+      <Route path='/users-test' element={<UsersForTest />} />
       <Route path='/users/:id' element={<UserDetailsPage />} />
       <Route path='/hello' element={<HelloWorld />} />
       <Route path='/*' element={<ErrorPage />} />
