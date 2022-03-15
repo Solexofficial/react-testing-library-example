@@ -27,7 +27,7 @@ const UsersForTest = () => {
       {users.length && (
         <div id='users-list'>
           {users.map(user => (
-            <User onDelete={onDelete} user={user} />
+            <User onDelete={onDelete} user={user} key={user.id} />
           ))}
         </div>
       )}

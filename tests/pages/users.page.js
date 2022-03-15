@@ -9,7 +9,7 @@ class UsersPage extends Page {
     return $('#users-list');
   }
 
-  get usersItem() {
+  get usersItems() {
     return browser.react$$('User');
   }
 
@@ -17,9 +17,29 @@ class UsersPage extends Page {
     try {
       await this.open();
       await this.loadingTitle.waitForDisplayed({ timeout: 2000 });
-      await this.userList.waitForDisplayed({ timeout: 2000 });
-    } catch (error) {
+      await this.usersList.waitForDisplayed({ timeout: 2000 });
+    } catch (e) {
       throw new Error('Не удалось загрузить пользователей');
+    }
+  }
+
+  async deleteUser() {
+    try {
+      const usersCount = await this.usersItems.length;
+
+      if (!usersCount) {
+        throw new Error('Пользователи не найдены');
+      }
+
+      await this.usersItems[0].$('#user-delete').click();
+
+      const usersCountAfterDelete = await this.usersItems.length;
+
+      if (usersCount - usersCountAfterDelete !== 1) {
+        throw new Error('Удаление не произошло или удалился более чем 1 пользователь');
+      }
+    } catch (e) {
+      throw new Error('Не удалось удалить пользователя. ' + e.message);
     }
   }
 
